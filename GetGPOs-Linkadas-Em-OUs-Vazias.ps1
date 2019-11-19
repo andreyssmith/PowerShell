@@ -1,6 +1,6 @@
 $remove_ous = $false
 
-$ous_to_keep = @('UAP - PEAP TLS','UAP - PEAP TLS Only','Disabled Users');
+$ous_to_keep = @('Usuarios Desligados');
 
 $ad_objects = Get-ADObject -Filter "ObjectClass -eq 'user' -or ObjectClass -eq 'computer' -or ObjectClass -eq 'group' -or ObjectClass -eq 'organizationalUnit'";
 
@@ -30,6 +30,6 @@ foreach ($sOu in $a0CountOus) {
 		}##endif
 	}##endif
 }##endforeach
-echo '-------------------'
-echo "Total Empty OUs Removed: $ous_removed"
-echo "Total Empty OUs: $empty_ous"
+echo '-----------------------------'
+echo "Total de OUs vazias: $empty_ous"
+echo "Total de OUs vazias removidas: $ous_removed"
